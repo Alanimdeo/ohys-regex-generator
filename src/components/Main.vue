@@ -27,7 +27,14 @@
       <v-card-title class="pb-0">결과</v-card-title>
       <v-card-text class="text-h5 pa-4">{{ aniNameRegex }}</v-card-text>
       <v-card-text class="pt-0">
-        <v-btn prepend-icon="mdi-content-copy" variant="flat" color="info" @click="copy()">복사</v-btn>
+        <v-btn
+          :prepend-icon="copySuccess ? 'mdi-check' : 'mdi-content-copy'"
+          variant="flat"
+          :color="copySuccess ? 'success' : 'info'"
+          @click="copy()"
+        >
+          복사
+        </v-btn>
       </v-card-text>
     </v-card>
   </div>
@@ -56,6 +63,8 @@ export default defineComponent({
       resolution: "1280x720 x264 AAC(x2)?",
 
       noAllEpisodes: false,
+
+      copySuccess: false,
     };
   },
 
@@ -71,6 +80,10 @@ export default defineComponent({
     copy() {
       if (this.aniNameRegex !== "애니 제목을 입력하세요.") {
         navigator.clipboard.writeText(this.aniNameRegex);
+        this.copySuccess = true;
+        setTimeout(() => {
+          this.copySuccess = false;
+        }, 2000);
       }
     },
   },
