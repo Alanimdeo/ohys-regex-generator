@@ -1,5 +1,8 @@
 <template>
   <v-app>
+    <v-app-bar color="info">
+      <v-app-bar-title>Ohys-Raws 정규식 생성기</v-app-bar-title>
+    </v-app-bar>
     <v-main>
       <Main />
     </v-main>

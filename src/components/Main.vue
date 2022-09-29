@@ -1,8 +1,4 @@
 <template>
-  <v-app-bar color="info">
-    <v-app-bar-title>Ohys-Raws 정규식 생성기</v-app-bar-title>
-  </v-app-bar>
-
   <div class="ma-3">
     <v-card class="border mb-5">
       <v-card-title>제목</v-card-title>
