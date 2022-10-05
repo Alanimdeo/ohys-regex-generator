@@ -70,7 +70,7 @@ export default defineComponent({
         this.aniName !== ""
           ? `\\[Ohys-Raws\\] ${this.aniName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}( - [0-9]*( END)?)${
               this.noAllEpisodes ? "" : "?"
-            } \\(.* ${this.resolution}\\)`
+            } \\(.* ${this.resolution}\\)(-X)?( v[0-9])?`
           : "애니 제목을 입력하세요.";
     },
     copy() {
